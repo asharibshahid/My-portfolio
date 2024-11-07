@@ -1,8 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-// Temporary type casting to 'any'
-import { Link as ScrollLink } from 'react-scroll';
- // Import react-scroll Link for smooth scrolling
 import Link from 'next/link'; // Import Next.js Link for page navigation
 
 const Navbar = () => {
@@ -20,9 +17,9 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-8 text-white font-medium">
           {/* Smooth Scroll for same-page sections */}
           <li>
-            <ScrollLink to="home" smooth={true} duration={500} className="cursor-pointer hover:text-gray-200">
+            <a href="#home" className="cursor-pointer hover:text-gray-200">
               Home
-            </ScrollLink>
+            </a>
           </li>
           {/* Use Next.js Link for page navigation */}
           <li>
@@ -62,9 +59,9 @@ const Navbar = () => {
             <ul className="flex flex-col items-center space-y-4 py-4">
               {/* Same-page smooth scrolling */}
               <li>
-                <ScrollLink to="home" href="/" smooth={true} duration={500} className="text-white text-lg cursor-pointer hover:text-gray-200" onClick={() => setIsOpen(false)}>
+                <a href="#home" className="text-white text-lg cursor-pointer hover:text-gray-200" onClick={() => setIsOpen(false)}>
                   Home
-                </ScrollLink>
+                </a>
               </li>
               {/* External page navigation */}
               <li>
@@ -96,4 +93,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
